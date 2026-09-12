@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Treino progressivo de digitação, do nível iniciante ao avançado.">
+  <title>TeclaLab — Treino de digitação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Página inicial do TeclaLab">
+      <span class="brand-mark">T<span>_</span></span>
+      <span>TeclaLab</span>
+    </a>
+    <div class="streak" title="Sequência de exercícios concluídos">
+      <span aria-hidden="true">◆</span>
+      <strong id="streak">0</strong> sequência
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">TREINO PROGRESSIVO</p>
+        <h1>Domine o teclado,<br><em>uma tecla por vez.</em></h1>
+        <p class="subtitle">Comece pelas teclas-guia e avance até letras, números, acentos e símbolos. No seu ritmo, sem pressão.</p>
+      </div>
+      <aside class="tip-card">
+        <span class="tip-icon" aria-hidden="true">⌁</span>
+        <div>
+          <strong>Dica de postura</strong>
+          <p>Mantenha os pulsos retos e os dedos sobre <kbd>F</kbd> e <kbd>J</kbd>.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="level-panel" aria-labelledby="levels-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SEU PERCURSO</p>
+          <h2 id="levels-title">Escolha o nível</h2>
+        </div>
+        <p id="level-summary">8 teclas · Linha de apoio</p>
+      </div>
+      <div class="levels" role="tablist" aria-label="Níveis de treino">
+        <button class="level active" type="button" role="tab" aria-selected="true" data-level="iniciante">
+          <span class="level-number">01</span><span><strong>Iniciante</strong><small>Teclas-guia</small></span><i>8 teclas</i>
+        </button>
+        <button class="level" type="button" role="tab" aria-selected="false" data-level="basico">
+          <span class="level-number">02</span><span><strong>Básico</strong><small>Todas as letras</small></span><i>27 teclas</i>
+        </button>
+        <button class="level" type="button" role="tab" aria-selected="false" data-level="intermediario">
+          <span class="level-number">03</span><span><strong>Intermediário</strong><small>Letras e números</small></span><i>37 teclas</i>
+        </button>
+        <button class="level" type="button" role="tab" aria-selected="false" data-level="avancado">
+          <span class="level-number">04</span><span><strong>Avançado</strong><small>Teclado completo</small></span><i>60+ teclas</i>
+        </button>
+      </div>
+    </section>
+
+    <section class="trainer" aria-labelledby="training-title">
+      <div class="trainer-head">
+        <div>
+          <p class="eyebrow" id="lesson-label">NÍVEL 01 · TECLAS-GUIA</p>
+          <h2 id="training-title">Posicione os dedos e comece</h2>
+        </div>
+        <button id="restart" class="icon-button" type="button" title="Reiniciar exercício" aria-label="Reiniciar exercício">↻</button>
+      </div>
+
+      <div class="stats" aria-label="Estatísticas do treino">
+        <div><span id="speed">0</span><small>PPM</small></div>
+        <div><span id="accuracy">100</span><small>PRECISÃO %</small></div>
+        <div><span id="errors">0</span><small>ERROS</small></div>
+        <div><span id="time">00:00</span><small>TEMPO</small></div>
+      </div>
+
+      <div class="exercise-wrap" id="exercise-wrap" tabindex="0" aria-label="Área de digitação. Pressione a tecla destacada.">
+        <p class="instruction">Digite a sequência abaixo</p>
+        <div id="exercise" class="exercise" aria-live="polite"></div>
+        <div class="progress-track"><span id="progress"></span></div>
+        <p id="feedback" class="feedback">Pressione qualquer tecla da sequência para iniciar</p>
+      </div>
+
+      <div class="keyboard" id="keyboard" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <div class="completion" id="completion" role="dialog" aria-modal="true" aria-labelledby="completion-title" hidden>
+    <div class="completion-card">
+      <span class="completion-icon">✓</span>
+      <p class="eyebrow">EXERCÍCIO CONCLUÍDO</p>
+      <h2 id="completion-title">Ótimo trabalho!</h2>
+      <p id="completion-message"></p>
+      <div class="completion-stats"><div><strong id="final-speed">0</strong><span>PPM</span></div><div><strong id="final-accuracy">100%</strong><span>Precisão</span></div></div>
+      <button id="next-lesson" type="button">Próximo exercício <span>→</span></button>
+      <button id="repeat-lesson" class="text-button" type="button">Repetir este exercício</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
